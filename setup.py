@@ -1,7 +1,7 @@
 from setuptools import find_packages,setup
 from typing import List
 
-HYPEN_E_DOT = '-e .'#Tener en cuenta que no esta activo en requirements.txt
+HYPEN_E_DOT = '-e .'
 def get_requirements(file_path:str)->List[str]:
     #Esta funcion retorna la lista de requerimientos
     requirements = []
@@ -9,7 +9,7 @@ def get_requirements(file_path:str)->List[str]:
         requirements = file_obj.readlines()
         requirements = [req.replace("\n","") for req in requirements]
 
-        if HYPEN_E_DOT in requirements:#Tener en cuenta que no esta activo en requirements.txt
+        if HYPEN_E_DOT in requirements:
             requirements.remove(HYPEN_E_DOT)
 
     return requirements
